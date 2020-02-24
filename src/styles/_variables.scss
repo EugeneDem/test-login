@@ -1,0 +1,24 @@
+// media queries
+$screen-xs-min: 375px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 1024px !default;
+$screen-lg-min: 1366px !default;
+
+$screen-xs-max: ($screen-xs-min - 1);
+$screen-sm-max: ($screen-sm-min - 1);
+$screen-md-max: ($screen-md-min - 1);
+$screen-lg-max: ($screen-lg-min - 1);
+
+$smallPhone: screen and (max-width: $screen-xs-max);
+$phone: screen and (max-width: $screen-sm-max);
+$tablet: screen and (max-width: $screen-md-max);
+$laptop: screen and (max-width: $screen-lg-max);
+
+// colors
+$default_color: black !default;
+
+// Typography
+$font-path: "~@/assets/fonts/" !default;
+$font-RobotoBl: "robotoblack" !default;
+$font-RobotoMd: "robotomedium" !default;
+$font-RobotoLt: "robotolight" !default;

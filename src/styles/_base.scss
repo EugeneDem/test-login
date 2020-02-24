@@ -1,0 +1,89 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 22px;
+
+  @media #{$laptop} {
+    font-size: 14px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #f5f7fb;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: $font-RobotoLt, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &.is-modal-open {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+p {
+  margin: 0 0 25px 0;
+}
+
+a {
+  color: #ae4698;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input::-ms-reveal {
+  display: none;
+}
+
+table {
+  border-width: 1px 0 0 1px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 0 0 25px 0;
+}
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+}
+
+ul, ol {
+  margin: 0 0 25px 20px;
+  padding-left: 0;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+@import "base/btn";
+@import "base/input-group";
