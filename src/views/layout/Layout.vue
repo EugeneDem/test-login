@@ -1,11 +1,6 @@
 <template>
   <div class="app">
     <div class="app__wrap">
-      <!-- <nav class="navbar">
-        <ul class="navbar__list" role="menubar">
-          <navbar v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" :default-active="activeMenu" />
-        </ul>
-      </nav> -->
       <app-main/>
     </div>
     <modal-login ref="modalLogin" :is-show="isShowModalLogin"/>
@@ -13,7 +8,7 @@
 </template>
 
 <script>
-import { ModalLogin, Navbar, AppMain } from './components'
+import { ModalLogin, AppMain } from './components'
 
 const { body } = document
 
@@ -21,7 +16,6 @@ export default {
   name: 'Layout',
   components: {
     ModalLogin,
-    Navbar,
     AppMain
   },
   data() {
@@ -50,7 +44,6 @@ export default {
   },
   methods: {
     openModalLogin() {
-      console.log('open')
       this.isShowModalLogin = true
       body.classList.add('is-modal-open')
     },

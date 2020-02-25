@@ -2,36 +2,24 @@
   <div class="app__wrapper">
     <div class="btn-group">
       <div class="btn btn_default" @click="openModal">Login</div>
-      <div class="btn btn_default">Шифр</div>
+      <div class="btn btn_default" @click="showCrypt">Шифр</div>
     </div>
-    <div class="form">
-      <div class="form__row">
-        <div class="form__label">Исходный текст</div>
-        <textarea class="form__control"/>
-      </div>
-      <div class="form__row">
-        <select class="form__select">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-      </div>
-      <div class="form__row">
-        <div class="btn">Шифровать</div>
-      </div>
-      <div class="rezult"/>
-    </div>
+    <template v-if="onCrypt">
+      <shift />
+    </template>
   </div>
 </template>
 
 <script>
+import Shift from './components/Shift'
 
 export default {
   name: 'Index',
-  components: { },
+  components: { Shift },
   data() {
-    return {}
+    return {
+      onCrypt: false
+    }
   },
   created() {
   },
@@ -42,6 +30,9 @@ export default {
   methods: {
     openModal() {
       this.$parent.$parent.openModalLogin()
+    },
+    showCrypt() {
+      this.onCrypt = !this.onCrypt
     }
   }
 }
